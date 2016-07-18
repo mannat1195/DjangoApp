@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<title> Appointment </title>
+<body>
+    <h1> Book an appointment with the manager </h1>
+    <h4> Enter your details </h4>
+    <form action={% url 'appschedule:results'%} method="post">
+    {% csrf_token %}
+        <!--name        :<input type="text" name="name" value="Enter your name"/><br>
+        age         :<input type="text" name="age" value="Enter your age"/><br>
+        contact no. :<input type="text" name="contact" value="Enter mobile no."/><br>-->
+        <!--date        :<input type="date" name="date" {{ value|date:"SHORT_DATE_FORMAT" }}/><br> -->     
+        {{form}}
+        <!--time:       <select>    <option value="9:00 am">9:00 am</option>
+                                <option value="10:00 am">10:00 am</option>
+                                <option value="11:00 am">11:00 am</option>
+                                <option value="12:00 noon">12:00 noon</option>
+                                <option value="02:00 pm">02:00 pm</option>
+                                <option value="03:00 pm">03:00 pm</option>
+                                <option value="04:00 pm">04:00 pm</option>
+                    </select> --><br /><br/>
+        <input type="submit" value="submit"/>        
+    </form>
+    <!--{% if already_booked %}
+    <p>
+    The booked slots are: {{already_booked}}
+    </p>
+    {% endif %}-->
+    
+    <p> From 1:00 pm to 2:00 pm the office remains closed for lunch! </p>
+</body>
+</html>

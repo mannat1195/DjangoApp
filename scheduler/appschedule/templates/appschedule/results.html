@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<h1> "Confirmation Page" </h1>
+    {% if error_message %}
+    <p><strong> {{ error_message }}</strong> <br/>
+    <h4>Already booked slots are :{{already_booked}}<h4><br/>
+    Vacant slots for the selected date are :{{vacant}}
+    </p>
+    <form action={% url 'appschedule:detail' %} method="get">
+        <input type="submit" value="book another slot"/>
+    </form>
+    {% else %}
+    <p> You have successfully booked an appointment! </p>
+    <form action={% url 'appschedule:index' %} method="get">
+        <input type="submit" value="Go back to HomePage"/>
+    </form>
+    {% endif %}
+</html>
+</body>
